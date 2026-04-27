@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://xajd3gna88ld"]
+
+[ext_resource type="Texture2D" uid="uid://ym7dkoywjggf" path="res://asset/IDLE/idle_down.png" id="1_f50pn"]
+[ext_resource type="Script" uid="uid://ctdjfvj823kqh" path="res://script/character_body_2d.gd" id="1_qug0s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snucy"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(0, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qug0s"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(96, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd05a"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(192, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86iwx"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(288, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_318mt"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(384, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8c3x"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(480, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogaei"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(576, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjxbh"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(672, 0, 96, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pykq2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snucy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qug0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd05a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86iwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_318mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8c3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogaei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjxbh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.98
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7y57j"]
+radius = 7.2111025
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1347150687]
+script = ExtResource("1_qug0s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2097028358]
+sprite_frames = SubResource("SpriteFrames_pykq2")
+autoplay = "default"
+frame_progress = 0.9825695
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1803051120]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_7y57j")
