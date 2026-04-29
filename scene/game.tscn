@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://xajd3gna88ld" path="res://scene/character_body_2d.tscn" id="1_5kiuu"]
 [ext_resource type="Texture2D" uid="uid://vq3om55phbmw" path="res://asset/spritrre/world_tileset.png" id="2_dbls1"]
+[ext_resource type="PackedScene" uid="uid://dijmnbbftuv0k" path="res://scene/platform.tscn" id="3_33cqm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33cqm"]
 texture = ExtResource("2_dbls1")
@@ -170,6 +171,44 @@ texture = ExtResource("2_dbls1")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_33cqm")
 
+[sub_resource type="Animation" id="Animation_33cqm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-555, -106)]
+}
+
+[sub_resource type="Animation" id="Animation_xwcet"]
+resource_name = "move"
+length = 1.2333333
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-558, -106), Vector2(-452, -106)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p1ry8"]
+_data = {
+&"RESET": SubResource("Animation_33cqm"),
+&"move": SubResource("Animation_xwcet")
+}
+
 [node name="game" type="Node2D" unique_id=703048358]
 
 [node name="CharacterBody2D" parent="." unique_id=1347150687 instance=ExtResource("1_5kiuu")]
@@ -184,3 +223,10 @@ position = Vector2(2, -20)
 tile_set = SubResource("TileSet_xwcet")
 format = 2
 layer_0/tile_data = PackedInt32Array(131068, 458752, 1, 131069, 458752, 1, 131070, 458752, 1, 131071, 458752, 1, 65536, 458752, 1, 262144, 458752, 1, 262145, 458752, 1, 262146, 458752, 1, 262147, 458752, 1, 262148, 458752, 1, 262149, 458752, 1, -131073, 131072, 3, -131063, 131072, 4, 9, 196608, 7, 65545, 196608, 7, 131081, 196608, 7, 196617, 196608, 7, 262153, 196608, 7, 65532, 0, 8, -196609, 0, 8, 196613, 0, 8, 327686, 393216, 0, 393222, 393216, 0, 458758, 393216, 0, 524294, 458752, 0, 589831, 458752, 0, 655368, 458752, 0, 720905, 458752, 0, 786442, 458752, 0, 327680, 458752, 0, 327681, 458752, 0, 327682, 458752, 0, 327683, 458752, 0, 393220, 458752, 0, 393221, 458752, 0, 327685, 458752, 0, 327684, 458752, 0, 458756, 131072, 12, 458757, 458752, 0, 524293, 458752, 0, 589830, 458752, 0, 655367, 458752, 0, 720904, 131072, 12, 786441, 458752, 0, 851978, 458752, 0, 851979, 458752, 0, 327689, 458752, 0, 393225, 458752, 0, 393226, 458752, 0, 458762, 458752, 0, 458763, 458752, 0, 524299, 458752, 0, 524300, 458752, 0, 589836, 458752, 0, 655372, 458752, 0, 655373, 458752, 0, 720909, 458752, 0, 720910, 458752, 0, 786446, 458752, 0, 917514, 458752, 0, 917515, 458752, 0, 720911, 458752, 0, 655369, 262144, 2, 393216, 131072, 12, 393217, 131072, 12, 393218, 131072, 12, 393219, 131072, 12, 458755, 131072, 12, 524292, 131072, 12, 589828, 131072, 12, 655363, 131072, 12, 720899, 131072, 12, 786435, 131072, 12, 851971, 131072, 12, 917507, 131072, 12, 917508, 131072, 12, 917509, 131072, 12, 917510, 131072, 12, 851973, 131072, 12, 786436, 131072, 12, 720898, 131072, 12, 655362, 131072, 12, 655365, 131072, 12, 655366, 131072, 12, 720902, 131072, 12, 786438, 131072, 12, 786439, 131072, 12, 851974, 131072, 12, 917511, 131072, 12, 917512, 131072, 12, 983048, 131072, 12, 917513, 131072, 12, 851977, 131072, 12, 851976, 131072, 12, 851975, 131072, 12, 786437, 131072, 12, 720900, 131072, 12, 720901, 131072, 12, 720903, 131072, 12, 786440, 131072, 12, 589829, 131072, 12, 655364, 131072, 12, 851972, 131072, 12, 589826, 131072, 12, 524289, 131072, 12, 524290, 131072, 12, 589827, 131072, 12, 524291, 131072, 12, 458754, 131072, 12, 458753, 131072, 12, 458752, 131072, 12, 524288, 131072, 12, 589824, 131072, 12, 589825, 131072, 12, 655361, 131072, 12, 720897, 131072, 12, 786433, 131072, 12, 851969, 131072, 12, 917505, 131072, 12, 917506, 131072, 12, 786434, 131072, 12, 851970, 131072, 12, 786432, 131072, 12, 720896, 131072, 12, 655360, 131072, 12, 589823, 131072, 12, 655359, 131072, 12, 851968, 131072, 12, 917504, 131072, 12, 786431, 131072, 12, 720895, 131072, 12, 589822, 131072, 12, 524286, 131072, 12, 458750, 131072, 12, 458751, 131072, 12, 393215, 131072, 12, 524287, 131072, 12, 851967, 131072, 12, 917503, 131072, 12, 983039, 131072, 12, 1048575, 131072, 12)
+
+[node name="platform" parent="." unique_id=2049133856 instance=ExtResource("3_33cqm")]
+position = Vector2(-555, -106)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="platform" unique_id=374626969]
+libraries/ = SubResource("AnimationLibrary_p1ry8")
+autoplay = &"move"
