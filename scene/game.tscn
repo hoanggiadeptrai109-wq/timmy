@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://vq3om55phbmw" path="res://asset/spritrre/world_tileset.png" id="2_dbls1"]
 [ext_resource type="PackedScene" uid="uid://dijmnbbftuv0k" path="res://scene/platform.tscn" id="3_33cqm"]
 [ext_resource type="PackedScene" uid="uid://kwcy11c6qyk3" path="res://scene/coin.tscn" id="4_xwcet"]
+[ext_resource type="PackedScene" uid="uid://8lebu34tvx47" path="res://scene/killzone.tscn" id="5_p1ry8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33cqm"]
 texture = ExtResource("2_dbls1")
@@ -167,6 +168,7 @@ texture = ExtResource("2_dbls1")
 2:7/0 = 0
 2:4/size_in_atlas = Vector2i(3, 3)
 2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_xwcet"]
 physics_layer_0/collision_layer = 1
@@ -210,6 +212,9 @@ _data = {
 &"move": SubResource("Animation_xwcet")
 }
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xlg7c"]
+distance = -71.0
+
 [node name="game" type="Node2D" unique_id=703048358]
 
 [node name="CharacterBody2D" parent="." unique_id=1347150687 instance=ExtResource("1_5kiuu")]
@@ -218,6 +223,7 @@ position = Vector2(0, -20)
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1910512145]
 position = Vector2(-11, 20)
 zoom = Vector2(4, 4)
+limit_bottom = 255
 
 [node name="TileMap" type="TileMap" parent="." unique_id=301951043]
 position = Vector2(2, -20)
@@ -240,3 +246,10 @@ position = Vector2(200, 94)
 
 [node name="Area2D3" parent="." unique_id=1265472357 instance=ExtResource("4_xwcet")]
 position = Vector2(220, 126)
+
+[node name="killzone" parent="." unique_id=264074699 instance=ExtResource("5_p1ry8")]
+position = Vector2(-11, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1795991642]
+position = Vector2(238, 220)
+shape = SubResource("WorldBoundaryShape2D_xlg7c")
