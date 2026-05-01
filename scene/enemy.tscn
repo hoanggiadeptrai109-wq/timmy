@@ -59,7 +59,7 @@ size = Vector2(9, 13)
 [node name="enemy" type="Node2D" unique_id=1399939034]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1753895831]
-position = Vector2(85, -69)
+position = Vector2(85, -64)
 sprite_frames = SubResource("SpriteFrames_rs6j2")
 autoplay = "default"
 frame_progress = 0.080770575
@@ -69,3 +69,11 @@ frame_progress = 0.080770575
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=541435741]
 position = Vector2(85, -68)
 shape = SubResource("RectangleShape2D_0n578")
+
+[node name="trai" type="RayCast2D" parent="." unique_id=44412320]
+position = Vector2(85, -68)
+target_position = Vector2(-7, 2)
+
+[node name="phai" type="RayCast2D" parent="." unique_id=238954349]
+position = Vector2(87, -66)
+target_position = Vector2(10, 0)
